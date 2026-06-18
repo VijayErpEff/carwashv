@@ -25,25 +25,26 @@ const jb = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Onyx — Mobile Detailing | The showroom comes to your driveway",
+  title: "Onyx — Mobile Car Detailing in West London & near Heathrow",
   description:
-    "Onyx is a mobile car detailing studio. We bring water, power and a fully-equipped detail bay to your driveway — express washes, full interior/exterior details, and ceramic paint protection.",
+    "Onyx is a mobile car detailing service based in Hounslow, minutes from Heathrow. We bring a fully-equipped detail bay to your door across West London — express washes, full interior/exterior details, and ceramic paint protection.",
   keywords: [
-    "mobile car wash",
-    "mobile detailing",
-    "ceramic coating",
-    "car detailing at home",
-    "auto detailing",
+    "mobile car detailing London",
+    "mobile car wash Heathrow",
+    "car detailing Hounslow",
+    "ceramic coating West London",
+    "mobile valeting Richmond",
   ],
   openGraph: {
-    title: "Onyx — Mobile Detailing",
-    description: "The showroom comes to your driveway.",
+    title: "Onyx — Mobile Car Detailing, West London",
+    description: "We bring the detail bay to your door, anywhere within 10 miles of Heathrow.",
     type: "website",
+    locale: "en_GB",
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0a0d0b",
+  themeColor: "#ffffff",
   width: "device-width",
   initialScale: 1,
 };

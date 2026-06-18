@@ -1,79 +1,71 @@
 /* ============================================================
-   ONYX — Mobile Detailing
-   Drenched-dark palette · OKLCH · "midnight detailing bay"
+   ONYX — Mobile Detailing · West London
+   Light · OKLCH · white + British racing green + brass
    ============================================================ */
 
 :root {
-  /* ---- Surface ramp: near-black stage with a whisper of green ---- */
-  --bg:          oklch(0.145 0.008 155);
-  --bg-deep:     oklch(0.108 0.006 155);
-  --surface:     oklch(0.190 0.010 155);
-  --surface-2:   oklch(0.232 0.012 155);
-  --surface-3:   oklch(0.280 0.013 155);
+  /* ---- Surfaces: white with a whisper of green in the neutrals ---- */
+  --bg:          oklch(1 0 0);
+  --bg-tint:     oklch(0.978 0.005 158);   /* alternating sections */
+  --surface:     oklch(0.992 0.003 158);   /* raised cards on tint */
+  --surface-2:   oklch(0.962 0.006 158);   /* insets, fields */
 
   /* ---- Ink ---- */
-  --ink:         oklch(0.965 0.006 150);
-  --muted:       oklch(0.760 0.013 155);
-  --faint:       oklch(0.625 0.013 155);
+  --ink:         oklch(0.235 0.013 160);
+  --muted:       oklch(0.455 0.013 160);
+  --faint:       oklch(0.530 0.012 160);
 
-  /* ---- Hairlines (alpha over surface) ---- */
-  --line:        oklch(1 0 0 / 0.085);
-  --line-strong: oklch(1 0 0 / 0.16);
+  /* ---- Hairlines (ink alpha) ---- */
+  --line:        oklch(0.235 0.013 160 / 0.13);
+  --line-strong: oklch(0.235 0.013 160 / 0.24);
 
-  /* ---- Brand: the green gleam (135°) ---- */
-  --brand:        oklch(0.805 0.175 134);
-  --brand-bright: oklch(0.885 0.165 132);
-  --brand-deep:   oklch(0.560 0.140 137);
-  --brand-ink:    oklch(0.205 0.055 142);   /* dark text that sits ON the brand fill */
-  --brand-glow:   oklch(0.805 0.175 134 / 0.45);
-  --brand-haze:   oklch(0.805 0.175 134 / 0.12);
+  /* ---- Brand: British racing green (156°) ---- */
+  --brand:        oklch(0.395 0.083 156);
+  --brand-hover:  oklch(0.330 0.078 156);
+  --brand-on:     oklch(0.985 0.006 156);   /* text on the green fill */
+  --brand-tint:   oklch(0.395 0.083 156 / 0.07);
+  --brand-tint-2: oklch(0.395 0.083 156 / 0.13);
+  --brand-line:   oklch(0.395 0.083 156 / 0.32);
 
-  /* ---- Accent: brass-gold (78°) ---- */
-  --accent:       oklch(0.815 0.118 78);
-  --accent-soft:  oklch(0.870 0.075 80);
-  --accent-ink:   oklch(0.255 0.045 70);
+  /* ---- Accent: brass (76°) — marks & rules, used sparingly ---- */
+  --accent:       oklch(0.660 0.110 76);
+  --accent-deep:  oklch(0.505 0.098 73);    /* brass that reads as text on white */
+  --accent-on:    oklch(0.250 0.040 70);
 
   /* ---- Functional ---- */
-  --success: oklch(0.790 0.160 150);
-  --warning: oklch(0.820 0.130 75);
-  --danger:  oklch(0.640 0.205 25);
+  --success: oklch(0.520 0.120 156);
+  --danger:  oklch(0.520 0.205 27);
 
   /* ---- Type ---- */
   --font-display: var(--font-fraunces), "Fraunces", Georgia, serif;
   --font-sans:    var(--font-hanken), "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-mono:    var(--font-mono-jb), "JetBrains Mono", ui-monospace, "SF Mono", monospace;
 
-  /* ---- Modular type scale (1.250 major third, 16px base) ---- */
-  --step--2: 0.64rem;
-  --step--1: 0.8rem;
-  --step-0:  1rem;
-  --step-1:  1.25rem;
-  --step-2:  1.563rem;
-  --step-3:  1.953rem;
-  --step-4:  2.441rem;
-  --step-5:  3.052rem;
-  --display: clamp(2.6rem, 1.4rem + 5.6vw, 5.5rem);
-  --display-sm: clamp(2rem, 1.3rem + 3.2vw, 3.4rem);
+  /* ---- Modular type scale (1.250, 16px base) ---- */
+  --step--2: 0.64rem; --step--1: 0.8rem; --step-0: 1rem;
+  --step-1: 1.25rem;  --step-2: 1.563rem; --step-3: 1.953rem;
+  --step-4: 2.441rem; --step-5: 3.052rem;
+  --display: clamp(2.6rem, 1.5rem + 5vw, 5.25rem);
 
-  /* ---- Spacing (8pt-ish, with rhythm) ---- */
-  --s-1: 0.25rem;  --s-2: 0.5rem;  --s-3: 0.75rem;  --s-4: 1rem;
-  --s-5: 1.5rem;   --s-6: 2rem;    --s-7: 3rem;     --s-8: 4rem;
-  --s-9: 6rem;     --s-10: 8rem;   --s-11: 11rem;
+  /* ---- Spacing ---- */
+  --s-1: 0.25rem; --s-2: 0.5rem; --s-3: 0.75rem; --s-4: 1rem;
+  --s-5: 1.5rem;  --s-6: 2rem;   --s-7: 3rem;    --s-8: 4rem;
+  --s-9: 6rem;    --s-10: 8rem;
 
   /* ---- Radii ---- */
   --r-1: 0.375rem; --r-2: 0.625rem; --r-3: 1rem; --r-4: 1.5rem; --r-pill: 999px;
 
-  /* ---- Elevation (deliberate, not stacked) ---- */
-  --shadow-1: 0 1px 0 0 oklch(1 0 0 / 0.04) inset, 0 2px 8px -2px oklch(0 0 0 / 0.5);
-  --shadow-2: 0 1px 0 0 oklch(1 0 0 / 0.05) inset, 0 24px 60px -24px oklch(0 0 0 / 0.7);
+  /* ---- Elevation (soft, light-mode) ---- */
+  --shadow-1: 0 1px 2px oklch(0.235 0.02 160 / 0.05), 0 10px 24px -16px oklch(0.235 0.05 160 / 0.18);
+  --shadow-2: 0 2px 4px oklch(0.235 0.02 160 / 0.04), 0 36px 64px -34px oklch(0.235 0.06 160 / 0.28);
 
   /* ---- Motion ---- */
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);     /* quint-ish */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in:  cubic-bezier(0.7, 0, 0.84, 0);
-  --dur-1: 150ms;  --dur-2: 240ms;  --dur-3: 360ms;  --dur-4: 600ms;
+  --dur-1: 150ms; --dur-2: 240ms; --dur-3: 360ms; --dur-4: 600ms;
 
-  /* ---- Z-index scale ---- */
-  --z-base: 0; --z-sheen: 1; --z-content: 2; --z-nav: 50; --z-overlay: 80; --z-toast: 90;
+  /* ---- z-index scale ---- */
+  --z-base: 0; --z-content: 2; --z-nav: 50; --z-overlay: 80; --z-toast: 90;
 
   --maxw: 78rem;
   --gutter: clamp(1.25rem, 5vw, 4rem);
@@ -93,172 +85,124 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  font-feature-settings: "ss01", "cv01";
+  font-feature-settings: "ss01";
   overflow-x: clip;
 }
 
 img, picture, svg, canvas { display: block; max-width: 100%; }
 button, input, textarea, select { font: inherit; color: inherit; }
 a { color: inherit; text-decoration: none; }
-::selection { background: var(--brand); color: var(--brand-ink); }
+::selection { background: var(--brand); color: var(--brand-on); }
 
 h1, h2, h3 {
   font-family: var(--font-display);
-  font-weight: 540;
-  line-height: 1.04;
+  font-weight: 500;
+  line-height: 1.05;
   letter-spacing: -0.025em;
   text-wrap: balance;
   font-optical-sizing: auto;
+  color: var(--ink);
 }
 p { text-wrap: pretty; }
 
 :focus-visible {
-  outline: 2px solid var(--brand-bright);
+  outline: 2px solid var(--brand);
   outline-offset: 3px;
   border-radius: 3px;
 }
 
-/* ---------------- shared utilities ---------------- */
 .skip-link {
-  position: fixed;
-  top: 0; left: 50%;
+  position: fixed; top: 0; left: 50%;
   transform: translate(-50%, -120%);
   z-index: var(--z-toast);
-  background: var(--brand);
-  color: var(--brand-ink);
-  padding: 0.6rem 1.1rem;
-  border-radius: 0 0 var(--r-2) var(--r-2);
+  background: var(--brand); color: var(--brand-on);
+  padding: 0.6rem 1.1rem; border-radius: 0 0 var(--r-2) var(--r-2);
   font-weight: 600;
   transition: transform var(--dur-2) var(--ease-out);
 }
 .skip-link:focus-visible { transform: translate(-50%, 0); }
 
+/* ---------------- utilities ---------------- */
 .shell {
-  width: 100%;
-  max-width: var(--maxw);
-  margin-inline: auto;
-  padding-inline: var(--gutter);
+  width: 100%; max-width: var(--maxw);
+  margin-inline: auto; padding-inline: var(--gutter);
 }
 
-.kicker {
+/* eyebrow label — used sparingly, not on every section */
+.eyebrow {
   font-family: var(--font-mono);
   font-size: var(--step--1);
-  letter-spacing: 0.06em;
-  color: var(--brand);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55em;
+  letter-spacing: 0.04em;
+  color: var(--accent-deep);
+  display: inline-flex; align-items: center; gap: 0.6em;
 }
-.kicker::before {
-  content: "";
-  width: 1.6em; height: 1px;
-  background: var(--brand);
-  opacity: 0.6;
-}
-
-.section-h {
-  font-size: var(--step-4);
-  letter-spacing: -0.03em;
-  max-width: 18ch;
+.eyebrow::before {
+  content: ""; width: 1.8em; height: 1px;
+  background: var(--accent); opacity: 0.8;
 }
 
 .lede {
   color: var(--muted);
   font-size: var(--step-1);
   line-height: 1.55;
-  max-width: 60ch;
+  max-width: 58ch;
 }
 
 /* Buttons */
 .btn {
-  --_pad-y: 0.85rem; --_pad-x: 1.4rem;
-  display: inline-flex; align-items: center; justify-content: center;
-  gap: 0.55em;
-  min-height: 48px;
-  padding: var(--_pad-y) var(--_pad-x);
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.55em;
+  min-height: 50px;
+  padding: 0.9rem 1.5rem;
   border-radius: var(--r-pill);
-  font-weight: 600;
-  font-size: var(--step-0);
-  letter-spacing: -0.01em;
-  border: 1px solid transparent;
-  cursor: pointer;
+  font-weight: 600; font-size: var(--step-0); letter-spacing: -0.01em;
+  border: 1px solid transparent; cursor: pointer;
   transition: transform var(--dur-1) var(--ease-out),
               background-color var(--dur-2) var(--ease-out),
               box-shadow var(--dur-2) var(--ease-out),
               border-color var(--dur-2) var(--ease-out),
               color var(--dur-2) var(--ease-out);
-  will-change: transform;
 }
 .btn:active { transform: translateY(1px) scale(0.99); }
 
 .btn-primary {
-  background: var(--brand);
-  color: var(--brand-ink);
-  box-shadow: 0 0 0 0 var(--brand-glow);
+  background: var(--brand); color: var(--brand-on);
+  box-shadow: var(--shadow-1);
 }
 .btn-primary:hover {
-  background: var(--brand-bright);
-  box-shadow: 0 10px 30px -8px var(--brand-glow);
+  background: var(--brand-hover);
+  box-shadow: 0 14px 32px -14px oklch(0.395 0.083 156 / 0.5);
   transform: translateY(-1px);
 }
-.btn-primary:focus-visible { outline-offset: 4px; }
 
 .btn-ghost {
-  background: oklch(1 0 0 / 0.02);
-  color: var(--ink);
+  background: transparent; color: var(--ink);
   border-color: var(--line-strong);
 }
 .btn-ghost:hover {
-  background: oklch(1 0 0 / 0.06);
-  border-color: var(--ink);
+  background: var(--brand-tint);
+  border-color: var(--brand);
+  color: var(--brand);
   transform: translateY(-1px);
 }
 
-.btn-quiet {
-  background: transparent;
-  color: var(--ink);
-  padding-inline: 0.25rem;
-}
-.btn-quiet:hover { color: var(--brand); }
-
 .btn[disabled], .btn[aria-disabled="true"] {
-  opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none;
-}
-
-/* pill / tag */
-.tag {
-  font-family: var(--font-mono);
-  font-size: var(--step--2);
-  letter-spacing: 0.04em;
-  padding: 0.35em 0.7em;
-  border-radius: var(--r-pill);
-  border: 1px solid var(--line);
-  color: var(--muted);
-  background: oklch(1 0 0 / 0.02);
+  opacity: 0.55; cursor: not-allowed; transform: none; box-shadow: none;
 }
 
 .divider { height: 1px; background: var(--line); border: 0; }
 
-/* ---------------- reveal (robust: visible by default) ----------------
-   Content is fully visible with no JS and under reduced-motion. Only when
-   JS is present AND motion is allowed do we hide-then-animate on scroll. */
+/* ---------------- reveal (visible by default) ---------------- */
 @media (prefers-reduced-motion: no-preference) {
   html.js [data-reveal] {
-    opacity: 0;
-    transform: translateY(22px);
-    transition: opacity var(--dur-4) var(--ease-out),
-      transform var(--dur-4) var(--ease-out);
+    opacity: 0; transform: translateY(20px);
+    transition: opacity var(--dur-4) var(--ease-out), transform var(--dur-4) var(--ease-out);
     transition-delay: var(--reveal-delay, 0ms);
     will-change: opacity, transform;
   }
-  html.js [data-reveal].is-in {
-    opacity: 1;
-    transform: none;
-  }
+  html.js [data-reveal].is-in { opacity: 1; transform: none; }
 }
 
-/* section vertical rhythm — varied, not uniform */
-.section { padding-block: clamp(var(--s-8), 12vh, var(--s-10)); position: relative; }
+.section { padding-block: clamp(var(--s-8), 11vh, var(--s-10)); position: relative; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

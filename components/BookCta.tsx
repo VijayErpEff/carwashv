@@ -36,7 +36,6 @@ export default function BookCta() {
       <div className={`shell ${styles.inner}`}>
         {/* left: reassurance + FAQ */}
         <div className={styles.left}>
-          <p className="kicker">Book your slot</p>
           <h2 id="book-h" className={styles.h}>
             Pick a window. We’ll bring the&nbsp;<span className={styles.gleam}>shine</span>.
           </h2>
@@ -98,7 +97,7 @@ export default function BookCta() {
                   <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
                     <path
                       d="m5 13 4 4L19 7"
-                      stroke="var(--brand-ink)"
+                      stroke="var(--brand-on)"
                       strokeWidth="2.6"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -107,8 +106,8 @@ export default function BookCta() {
                 </span>
                 <h3 className={styles.doneH}>Request in. Nice car.</h3>
                 <p className={styles.doneP}>
-                  We’ve got your details and we’ll text {site.phone} a confirmed
-                  window within the hour. Keep an eye on your phone.
+                  We’ve got your details and we’ll text you a confirmed window
+                  within the hour. Prefer to talk? Call us on {site.phone}.
                 </p>
                 <button className="btn btn-ghost" onClick={() => setStatus("idle")}>
                   Book another car
@@ -138,7 +137,7 @@ export default function BookCta() {
                   </Field>
                   <Field label="Postcode" error={errors.postcode} htmlFor="postcode">
                     <input id="postcode" name="postcode" className={styles.input}
-                      placeholder="94110" aria-invalid={!!errors.postcode}
+                      placeholder="TW3 1AB" aria-invalid={!!errors.postcode}
                       autoComplete="postal-code" inputMode="text" />
                   </Field>
                 </div>
@@ -148,7 +147,7 @@ export default function BookCta() {
                     <select id="service" name="service" className={styles.input} defaultValue="full">
                       {services.map((s) => (
                         <option key={s.id} value={s.id}>
-                          {s.name} — from ${s.from}
+                          {s.name} — from £{s.from}
                         </option>
                       ))}
                       <option value="fleet">Fleet / membership enquiry</option>

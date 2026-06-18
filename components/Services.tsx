@@ -8,15 +8,14 @@ export default function Services() {
       <div className="shell">
         <div className={styles.head}>
           <Reveal>
-            <p className="kicker">What we do</p>
-            <h2 id="services-h" className={`section-h ${styles.h}`}>
-              Three ways to get your car back to new.
+            <h2 id="services-h" className={styles.h}>
+              Three ways to get your car back to its best.
             </h2>
           </Reveal>
           <Reveal i={1}>
             <p className="lede">
-              Every job is done by hand on your kerb. Pick the depth you need —
-              from a sharp weekly rinse to multi-year ceramic protection.
+              Every job is done by hand on your drive. Pick the depth you need —
+              from a sharp fortnightly wash to multi-year ceramic protection.
             </p>
           </Reveal>
         </div>
@@ -29,10 +28,7 @@ export default function Services() {
               key={s.id}
               className={`${styles.card} ${s.featured ? styles.featured : ""}`}
             >
-              <div className={styles.cardTop}>
-                <span className={styles.idx}>{String(idx + 1).padStart(2, "0")}</span>
-                {s.featured && <span className={styles.most}>Most booked</span>}
-              </div>
+              {s.featured && <span className={styles.most}>Most booked</span>}
 
               <h3 className={styles.name}>{s.name}</h3>
               <p className={styles.blurb}>{s.blurb}</p>
@@ -49,11 +45,11 @@ export default function Services() {
               <div className={styles.cardFoot}>
                 <div className={styles.price}>
                   <span className={styles.from}>from</span>
-                  <span className={styles.amount}>${s.from}</span>
+                  <span className={styles.amount}>£{s.from}</span>
                   <span className={styles.dur}>· {s.duration}</span>
                 </div>
                 <a href="#book" className={s.featured ? "btn btn-primary" : "btn btn-ghost"}>
-                  Choose {s.name.split(" ").slice(-1)}
+                  Book this
                 </a>
               </div>
             </Reveal>
@@ -66,7 +62,7 @@ export default function Services() {
               <h3 className={styles.fleetH}>Running a fleet, or want it on repeat?</h3>
               <p className={styles.fleetP}>
                 Memberships and business fleet accounts get standing slots, a
-                recurring discount and one tidy monthly invoice.
+                recurring rate and one tidy monthly invoice.
               </p>
             </div>
             <a href="#book" className="btn btn-ghost">

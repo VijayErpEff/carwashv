@@ -8,7 +8,6 @@ export default function Testimonials() {
       <div className="shell">
         <div className={styles.head}>
           <Reveal>
-            <p className="kicker">From the driveway</p>
             <h2 id="proof-h" className={styles.h}>
               Cars our neighbours trusted us with.
             </h2>
@@ -18,7 +17,7 @@ export default function Testimonials() {
               ★★★★★
             </span>
             <span className={styles.ratingText}>
-              4.9 / 5 · <span className={styles.muted}>312 verified jobs</span>
+              4.9 / 5 · <span className={styles.muted}>312 Google reviews</span>
             </span>
           </Reveal>
         </div>

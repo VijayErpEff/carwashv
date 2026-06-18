@@ -1,12 +1,14 @@
 export const site = {
   name: "Onyx",
   full: "Onyx Mobile Detailing",
-  tagline: "The showroom comes to your driveway.",
-  phone: "(415) 555-0142",
-  phoneHref: "tel:+14155550142",
-  email: "book@onyxdetail.co",
-  hours: "Tue–Sun · 7am – 6pm",
-  baseCity: "the Bay Area",
+  tagline: "We bring the detail bay to your door.",
+  phone: "07700 900142",
+  phoneHref: "tel:+447700900142",
+  email: "hello@onyxdetailing.co.uk",
+  hours: "Mon–Sat · 8am – 6pm",
+  baseArea: "West London",
+  base: "Hounslow, a few minutes from Heathrow",
+  radius: "10 miles of Heathrow",
 };
 
 export type Service = {
@@ -24,106 +26,114 @@ export const services: Service[] = [
     id: "express",
     name: "Express Exterior",
     blurb:
-      "The weekly reset. Hand wash, foam bath, wheels and tyres dressed, glass cleared, a quick spray sealant for beading that lasts.",
+      "The fortnightly reset. A proper two-bucket hand wash, wheels and tyres cleaned and dressed, glass cleared, and a spray sealant so the rain beads off for weeks.",
     duration: "45–60 min",
-    from: 49,
+    from: 45,
     features: ["Two-bucket hand wash", "Wheels, tyres & arches", "Streak-free glass", "Spray sealant top-coat"],
   },
   {
     id: "full",
     name: "The Full Detail",
     blurb:
-      "Inside and out, top to bottom. Deep interior extraction, leather conditioned, every vent and seam addressed — paired with a decontaminated, polished exterior.",
+      "Inside and out, top to bottom. A deep interior clean and steam, leather fed and conditioned, then a decontaminated and machine-polished exterior that looks lit from within.",
     duration: "3–4 hrs",
-    from: 189,
+    from: 165,
     features: [
       "Everything in Express",
-      "Interior shampoo & steam",
+      "Interior deep-clean & steam",
       "Leather clean + condition",
-      "Clay bar decontamination",
+      "Clay-bar decontamination",
       "One-step machine polish",
     ],
     featured: true,
   },
   {
     id: "ceramic",
-    name: "Ceramic & Paint Protection",
+    name: "Ceramic Protection",
     blurb:
-      "Lock in the gloss. A multi-stage correction followed by a pro-grade ceramic coating — years of hydrophobic, UV-stable protection.",
+      "Lock the gloss in. Multi-stage paint correction followed by a professional ceramic coating — years of hydrophobic, UV-stable protection against British weather and motorway grime.",
     duration: "1–2 days",
-    from: 699,
-    features: ["Paint correction (1–3 stage)", "9H ceramic coating", "Glass & wheel coating", "2–5 yr warranty"],
+    from: 649,
+    features: ["Paint correction (1–3 stage)", "9H ceramic coating", "Glass & wheel coating", "2–5 year guarantee"],
   },
 ];
 
 export const steps = [
   {
     n: "01",
-    title: "Book in 90 seconds",
-    body: "Tell us your vehicle, your address and a window that works. No phone tag — pick a slot and you’re set.",
+    title: "Book in under two minutes",
+    body: "Tell us the car, your postcode and a window that suits you. Pick a slot online — no phone tag, no waiting in for a callback.",
   },
   {
     n: "02",
-    title: "We roll up self-contained",
-    body: "Our van carries its own water, power and pro equipment. All we need is a parking space — driveway, kerb or office lot.",
+    title: "We arrive fully self-contained",
+    body: "Our van carries its own water, power and professional kit. All we need is room to park beside the car — your drive, the kerb, or the office car park.",
   },
   {
     n: "03",
-    title: "You walk out to a showroom finish",
-    body: "Keep working, keep relaxing. We text when it’s done and leave your car looking like the day you first saw it.",
+    title: "You get back a car that looks new",
+    body: "Carry on with your day while we work. We message you the moment it's done and hand back a car that genuinely turns heads on the school run.",
   },
 ];
 
 export const stats = [
-  { value: "1,400+", label: "cars detailed" },
-  { value: "4.9", label: "average rating", suffix: "★" },
-  { value: "0", label: "trips to a wash" },
-  { value: "100%", label: "we come to you" },
+  { value: "600+", label: "cars detailed" },
+  { value: "4.9", label: "Google rating", suffix: "★" },
+  { value: "10mi", label: "of Heathrow" },
+  { value: "Fully", label: "insured & DBS-checked" },
 ];
 
 export const testimonials = [
   {
     quote:
-      "Booked the full detail on a Tuesday, they were parked outside my place by Thursday morning. The interior looks better than when I bought it — and I have a toddler.",
+      "Booked the full detail on the Tuesday, van was on my drive in Richmond by Thursday morning. The interior came back better than the day I collected the car — and I've two kids and a dog.",
     name: "Marina D.",
-    meta: "Audi Q5 · Noe Valley",
+    meta: "Audi Q5 · Richmond",
   },
   {
     quote:
-      "I run a six-van fleet. Onyx keeps every one of them spotless on a standing schedule and I never have to think about it. The invoicing is just as clean as the trucks.",
+      "I run six vans out of Feltham. Onyx keeps the whole fleet presentable on a standing weekly slot and I never have to chase it. One tidy invoice at the end of the month.",
     name: "Desmond R.",
-    meta: "Fleet account · SoMa",
+    meta: "Fleet account · Feltham",
   },
   {
     quote:
-      "The ceramic coat is unreal. Rain just sheets straight off and bird mess wipes away with a towel. Worth every dollar — and they did it all in my own garage.",
+      "The ceramic coating is the real deal. Motorway grime and rain just sheet straight off, and a bird-mess wipes away with a damp cloth. They did the lot on my driveway in Twickenham.",
     name: "Priya K.",
-    meta: "Tesla Model 3 · Berkeley",
+    meta: "Tesla Model 3 · Twickenham",
   },
 ];
 
 export const coverage = [
-  "San Francisco",
-  "Oakland",
-  "Berkeley",
-  "Daly City",
-  "South San Francisco",
-  "Alameda",
-  "Emeryville",
-  "Sausalito",
+  "Hounslow",
+  "Richmond",
+  "Twickenham",
+  "Chiswick",
+  "Ealing",
+  "Feltham",
+  "Staines",
+  "Ashford",
+  "Windsor",
+  "Slough",
+  "Uxbridge",
+  "Kingston",
 ];
 
 export const faqs = [
   {
     q: "What do you need from me on the day?",
-    a: "A parking spot roughly the size of one-and-a-half cars and access to your vehicle. That’s genuinely it — we’re fully self-contained with our own water and power.",
+    a: "Somewhere to park beside the car — roughly the length of a car and a half — and access to the vehicle. That's it. We're fully self-contained with our own water and power, so no need for an outdoor tap or socket.",
   },
   {
-    q: "Do you work in rain or apartment garages?",
-    a: "Yes. We carry pop-up cover for light rain and work comfortably in covered garages and underground lots, provided there’s room to open the doors.",
+    q: "Do you work in the rain, or in flats without a driveway?",
+    a: "Yes to both. We carry pop-up cover for British weather, and we'll happily work at the kerb, in a residents' car park, or an underground bay as long as there's room to open the doors.",
+  },
+  {
+    q: "How far do you travel?",
+    a: "We're based in Hounslow and cover everywhere within about 10 miles of Heathrow as standard — most of West London and the surrounding boroughs. A little further out for full details and ceramic work; just ask.",
   },
   {
     q: "Is there a membership?",
-    a: "There is. Members get a recurring Express or Full Detail at a standing discount, priority slots, and free interim spot-cleans between visits.",
+    a: "There is. Members get a recurring Express or Full Detail at a standing rate, priority booking, and free quick tidy-ups between visits. Business fleet accounts are billed monthly.",
   },
 ];

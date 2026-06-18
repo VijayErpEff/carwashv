@@ -1,86 +1,77 @@
-import { site, stats } from "@/lib/site";
+import Image from "next/image";
+import { site } from "@/lib/site";
+import { images } from "@/lib/images";
 import Reveal from "./Reveal";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
   return (
     <section className={styles.hero} aria-labelledby="hero-h">
-      {/* ambient studio light */}
-      <div className={styles.glow} aria-hidden="true" />
-      <div className={styles.grid} aria-hidden="true" />
-
       <div className={`shell ${styles.inner}`}>
         <div className={styles.copy}>
-          <Reveal i={0} as="p" className={`kicker ${styles.kick}`}>
-            Mobile car detailing · {site.baseCity}
+          <Reveal i={0} as="p" className={`eyebrow ${styles.kick}`}>
+            Mobile detailing · {site.baseArea}
           </Reveal>
 
           <Reveal i={1} as="h1" className={styles.h1}>
             <span id="hero-h">
-              We bring the
+              Your car, detailed
               <br />
-              <span className={styles.gleam}>showroom</span>{" "}
-              <em className={styles.em}>shine</em>
+              <em className={styles.gleam}>to a shine</em> — without
               <br />
-              to your driveway.
+              leaving the drive.
             </span>
           </Reveal>
 
           <Reveal i={2} as="p" className={`lede ${styles.lede}`}>
-            No queues, no lost Saturday. A self-contained detail bay rolls up to
-            your home or office — water, power and pro hands included — and leaves
-            your car looking the way you remember it.
+            Onyx is a mobile detail studio based minutes from Heathrow. We arrive
+            fully self-contained — water, power, professional kit — and hand back a
+            car that looks better than the day you collected it.
           </Reveal>
 
           <Reveal i={3} className={styles.cta}>
             <a href="#book" className="btn btn-primary">
-              Book a wash
+              Book a detail
               <Arrow />
             </a>
             <a href="#services" className="btn btn-ghost">
-              See what we do
+              View packages &amp; prices
             </a>
           </Reveal>
 
-          <Reveal i={4} as="dl" className={styles.stats}>
-            {stats.map((s) => (
-              <div key={s.label} className={styles.stat}>
-                <dt className={styles.statVal}>
-                  {s.value}
-                  {"suffix" in s && s.suffix ? (
-                    <span className={styles.statSuffix}>{s.suffix}</span>
-                  ) : null}
-                </dt>
-                <dd className={styles.statLabel}>{s.label}</dd>
-              </div>
-            ))}
+          <Reveal i={4} className={styles.trust}>
+            <span className={styles.stars} aria-hidden="true">
+              ★★★★★
+            </span>
+            <span className={styles.trustText}>
+              <strong>4.9</strong> on Google
+            </span>
+            <span className={styles.dot} aria-hidden="true" />
+            <span className={styles.trustText}>Fully insured &amp; DBS-checked</span>
           </Reveal>
         </div>
 
-        {/* The stage: a glossy panel catching a moving sheen (pure CSS) */}
-        <div className={styles.stage} aria-hidden="true">
-          <div className={styles.panel}>
-            <div className={styles.reflection} />
-            <div className={styles.sheen} />
-            <div className={styles.horizon} />
-            <div className={styles.beads}>
-              {Array.from({ length: 7 }).map((_, i) => (
-                <span key={i} style={{ ["--i" as string]: i }} />
-              ))}
+        <Reveal i={2} className={styles.media}>
+          <div className={styles.frame}>
+            <Image
+              src={images.heroCar.src}
+              alt={images.heroCar.alt}
+              fill
+              priority
+              sizes="(max-width: 980px) 100vw, 52vw"
+              className={styles.photo}
+            />
+          </div>
+
+          <div className={styles.coverageCard}>
+            <Pin />
+            <div>
+              <span className={styles.coverageLead}>We come to you</span>
+              <span className={styles.coverageSub}>Anywhere within {site.radius}</span>
             </div>
           </div>
-          <div className={styles.contact} />
-          <span className={styles.badge}>
-            <span className={styles.badgeDot} />
-            Available this week
-          </span>
-        </div>
+        </Reveal>
       </div>
-
-      <a href="#services" className={styles.scroll} aria-label="Scroll to services">
-        <span>Scroll</span>
-        <span className={styles.scrollLine} />
-      </a>
     </section>
   );
 }
@@ -95,6 +86,18 @@ function Arrow() {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
+    </svg>
+  );
+}
+
+function Pin() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" className={styles.pin}>
+      <path
+        d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"
+        fill="var(--brand)"
+      />
+      <circle cx="12" cy="10" r="2.6" fill="var(--brand-on)" />
     </svg>
   );
 }

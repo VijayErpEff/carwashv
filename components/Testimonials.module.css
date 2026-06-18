@@ -1,6 +1,5 @@
 .wrap {
-  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 100%);
-  border-top: 1px solid var(--line);
+  background: var(--bg);
 }
 
 .head {
@@ -14,7 +13,6 @@
 .h {
   font-size: var(--step-4);
   letter-spacing: -0.03em;
-  margin-top: var(--s-4);
   max-width: 16ch;
 }
 .rating {
@@ -26,16 +24,14 @@
 .stars {
   color: var(--accent);
   font-size: var(--step-1);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
 }
 .ratingText {
   font-family: var(--font-mono);
   font-size: var(--step--1);
   color: var(--ink);
 }
-.muted {
-  color: var(--faint);
-}
+.muted { color: var(--faint); }
 
 .grid {
   list-style: none;
@@ -54,22 +50,22 @@
   height: 100%;
   padding: clamp(1.5rem, 2.4vw, 2.25rem);
   border-radius: var(--r-4);
-  background: var(--surface);
-  border: 1px solid var(--line);
-  transition: border-color var(--dur-2) var(--ease-out), transform var(--dur-2) var(--ease-out);
+  background: var(--bg);
+  border: 1px solid var(--line-strong);
+  transition: border-color var(--dur-2) var(--ease-out), transform var(--dur-2) var(--ease-out),
+    box-shadow var(--dur-2) var(--ease-out);
 }
 .card:hover {
-  border-color: var(--line-strong);
+  border-color: var(--brand-line);
+  box-shadow: var(--shadow-1);
   transform: translateY(-3px);
 }
-/* first quote leads — larger type, brand-lit, taller */
+/* the lead quote: brand-tinted, larger type */
 .card:first-child {
-  background: radial-gradient(130% 110% at 0% 0%, oklch(0.21 0.028 150) 0%, var(--surface) 60%);
-  border-color: oklch(0.805 0.175 134 / 0.28);
+  background: var(--brand-tint);
+  border-color: var(--brand-line);
 }
-.card:first-child .quote {
-  font-size: var(--step-2);
-}
+.card:first-child .quote { font-size: var(--step-2); }
 
 .quote {
   font-family: var(--font-display);
@@ -92,16 +88,16 @@
   height: 42px;
   flex: none;
   border-radius: 50%;
-  background: var(--surface-3);
-  border: 1px solid var(--line-strong);
+  background: var(--brand);
+  color: var(--brand-on);
   font-family: var(--font-display);
   font-weight: 600;
-  color: var(--brand);
 }
 .name {
   display: block;
   font-weight: 600;
   font-size: var(--step-0);
+  color: var(--ink);
 }
 .meta {
   display: block;
@@ -112,13 +108,7 @@
 }
 
 @media (max-width: 900px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-  .head {
-    align-items: flex-start;
-  }
-  .rating {
-    align-items: flex-start;
-  }
+  .grid { grid-template-columns: 1fr; }
+  .head { align-items: flex-start; }
+  .rating { align-items: flex-start; }
 }

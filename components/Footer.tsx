@@ -19,7 +19,7 @@ export default function Footer() {
           <h3 className={styles.colH}>Services</h3>
           <a href="#services">Express Exterior</a>
           <a href="#services">The Full Detail</a>
-          <a href="#services">Ceramic &amp; Paint</a>
+          <a href="#services">Ceramic Protection</a>
           <a href="#book">Fleet &amp; memberships</a>
         </nav>
 
@@ -40,7 +40,7 @@ export default function Footer() {
             {site.email}
           </a>
           <p className={styles.hours}>{site.hours}</p>
-          <p className={styles.hours}>Serving {site.baseCity}</p>
+          <p className={styles.hours}>Serving {site.baseArea}</p>
         </div>
       </div>
 
@@ -51,7 +51,7 @@ export default function Footer() {
         <span className={styles.legal}>
           <a href="#">Privacy</a>
           <a href="#">Terms</a>
-          <span className={styles.built}>Built in {site.baseCity}</span>
+          <span className={styles.built}>Made in {site.baseArea}</span>
         </span>
       </div>
     </footer>
