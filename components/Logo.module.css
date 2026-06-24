@@ -1,38 +1,78 @@
 .lockup {
-  position: relative;
   display: inline-flex;
-  line-height: 0;
+  align-items: center;
+  gap: calc(var(--h) * 0.22);
+  line-height: 1;
   user-select: none;
 }
 
-.img {
-  height: var(--h);
+.emblem {
+  height: calc(var(--h) * 1.5);
   width: auto;
-  display: block;
+  flex: none;
 }
 
-/* specular glint, masked to the logo shape so it only shines on the artwork */
-.sheen {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(
-    115deg,
-    transparent 43%,
-    oklch(1 0 0 / 0.7) 50%,
-    transparent 57%
-  );
-  -webkit-mask: url("/logo-light.png") center / contain no-repeat;
-  mask: url("/logo-light.png") center / contain no-repeat;
-  transform: translateX(-130%) skewX(-10deg);
+.words {
+  display: inline-flex;
+  flex-direction: column;
+  gap: calc(var(--h) * 0.08);
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-style: italic;
+  font-variation-settings: "wght" 800, "wdth" 100;
+  font-size: calc(var(--h) * 0.72);
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .wordmark {
+    background: linear-gradient(
+      100deg,
+      var(--ink) 0%, var(--ink) 43%,
+      var(--brand-bright) 50%,
+      var(--ink) 57%, var(--ink) 100%
+    );
+    background-size: 250% 100%;
+    background-position: 180% 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
 }
 @media (prefers-reduced-motion: no-preference) {
-  .sheen { animation: logo-shine 1.5s var(--ease-out) 0.5s 1; }
-  .lockup:hover .sheen { animation: logo-shine 1s var(--ease-out); }
+  .wordmark { animation: glint 1.3s var(--ease-out) 0.5s 1; }
+  .lockup:hover .wordmark { animation: glint 0.9s var(--ease-out); }
 }
-@keyframes logo-shine {
-  from { transform: translateX(-130%) skewX(-10deg); }
-  to   { transform: translateX(130%) skewX(-10deg); }
+
+.sub {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--h) * 0.2);
+}
+.carwash {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: calc(var(--h) * 0.25);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.rm {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: calc(var(--h) * 0.26);
+  letter-spacing: 0.04em;
+  color: var(--brand-on);
+  background: var(--brand);
+  padding: calc(var(--h) * 0.04) calc(var(--h) * 0.16);
+  border-radius: calc(var(--h) * 0.16);
+  line-height: 1.15;
 }
 
 .srOnly {

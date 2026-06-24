@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={`shell ${styles.top}`}>
         <div className={styles.brandCol}>
-          <Logo height={54} />
+          <Logo height={40} />
           <p className={styles.tag}>{site.tagline}</p>
           <a href="#book" className="btn btn-primary">
             Book a wash
