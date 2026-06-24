@@ -3,11 +3,11 @@ import styles from "./Logo.module.css";
 type Props = { className?: string; height?: number };
 
 /**
- * The original Terminal Car Wash RM logo, in full colour (transparent
- * background). It lives on the dark nav + footer, where the chrome, car and
- * electric spray read exactly as designed. A masked sheen makes it glint.
+ * The Terminal Car Wash RM badge — the client's light-ready artwork: the full
+ * logo on a dark disc with a white ring that dissolves into the light page.
+ * A masked sheen makes it glint on load / hover.
  */
-export default function Logo({ className, height = 48 }: Props) {
+export default function Logo({ className, height = 46 }: Props) {
   return (
     <span
       className={`${styles.lockup} ${className ?? ""}`}
@@ -16,7 +16,7 @@ export default function Logo({ className, height = 48 }: Props) {
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         className={styles.img}
-        src="/logo.png"
+        src="/logo-light.png"
         alt=""
         aria-hidden="true"
         draggable={false}
