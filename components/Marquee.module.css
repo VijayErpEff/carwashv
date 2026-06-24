@@ -27,14 +27,16 @@
 }
 .word {
   font-family: var(--font-display);
-  font-weight: 800;
-  font-variation-settings: "wght" 800, "wdth" 112;
+  font-weight: 700;
+  font-style: italic;
+  font-variation-settings: "wght" 700, "wdth" 102;
   text-transform: uppercase;
-  letter-spacing: 0.02em;
-  font-size: clamp(1.4rem, 3.4vw, 2.4rem);
+  letter-spacing: 0.01em;
+  font-size: clamp(1.2rem, 2.8vw, 1.9rem);
   line-height: 1;
+  color: var(--ink);
 }
-.spark { flex: none; opacity: 0.85; filter: drop-shadow(0 0 6px var(--brand-glow)); }
+.spark { flex: none; opacity: 0.9; }
 
 .fadeL, .fadeR {
   position: absolute;

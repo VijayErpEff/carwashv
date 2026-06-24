@@ -86,11 +86,19 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(115deg, transparent 38%, oklch(1 0 0 / 0.4) 50%, transparent 62%);
+  z-index: 3;
+  background: linear-gradient(
+    115deg,
+    transparent 36%,
+    oklch(1 0 0 / 0.25) 46%,
+    oklch(1 0 0 / 0.7) 50%,
+    oklch(1 0 0 / 0.25) 54%,
+    transparent 64%
+  );
   transform: translateX(-120%) skewX(-12deg);
 }
 @media (prefers-reduced-motion: no-preference) {
-  .shine { animation: shine-pan 7s var(--ease-out) 1.6s infinite; }
+  .shine { animation: shine-pan 3.4s var(--ease-out) 0.7s infinite; }
 }
 
 /* ---------------- responsive ---------------- */

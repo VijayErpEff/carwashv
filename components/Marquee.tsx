@@ -13,7 +13,7 @@ export default function Marquee() {
       <div className={styles.track}>
         {run.map((w, i) => (
           <span key={i} className={styles.item}>
-            <span className={`chrome ${styles.word}`}>{w}</span>
+            <span className={styles.word}>{w}</span>
             <Spark />
           </span>
         ))}
