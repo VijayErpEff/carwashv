@@ -1,57 +1,53 @@
 /* ============================================================
    TERMINAL CAR WASH · RM — West London / Heathrow
-   Dark · OKLCH · blue-black + electric blue + liquid chrome
-   Voice: a detailing bay at night — wet paint, raking light,
-   chrome reflections, one electric-blue line through it all.
+   LIGHT · OKLCH · crisp cool-white + electric blue + brushed steel
+   Voice: a bright detailing bay — water, glass, chrome, daylight.
+   Neutrals are tinted toward the brand's BLUE (not warm cream).
    ============================================================ */
 
 :root {
-  /* ---- Surfaces: blue-black, lifted in measured steps ---- */
-  --bg:          oklch(0.155 0.016 257);
-  --bg-2:        oklch(0.185 0.018 257);   /* alternating sections */
-  --surface:     oklch(0.205 0.020 256);   /* raised cards */
-  --surface-2:   oklch(0.235 0.022 256);   /* insets, fields */
-  --surface-3:   oklch(0.270 0.024 256);   /* hover / pressed */
+  /* ---- Surfaces: cool crisp whites, tinted toward blue ---- */
+  --bg:          oklch(0.985 0.004 248);   /* page — crisp, not cream */
+  --bg-2:        oklch(0.963 0.007 248);   /* alternating sections */
+  --surface:     oklch(1 0 0);             /* white cards lift on bg-2 */
+  --surface-2:   oklch(0.948 0.008 248);   /* insets, fields */
+  --surface-3:   oklch(0.915 0.010 248);   /* hover / pressed */
 
-  /* ---- Ink: cool near-white down to faint ---- */
-  --ink:         oklch(0.965 0.006 250);
-  --muted:       oklch(0.745 0.014 248);
-  --faint:       oklch(0.605 0.014 248);
+  /* ---- Ink: cool near-black down to a readable muted ---- */
+  --ink:         oklch(0.225 0.030 256);
+  --muted:       oklch(0.448 0.030 254);   /* AA body on light */
+  --faint:       oklch(0.545 0.028 254);   /* large / secondary only */
 
-  /* ---- Hairlines (light alpha) ---- */
-  --line:        oklch(0.97 0.01 250 / 0.10);
-  --line-strong: oklch(0.97 0.01 250 / 0.18);
-  --line-bright: oklch(0.97 0.01 250 / 0.32);
+  /* ---- Hairlines (ink alpha) ---- */
+  --line:        oklch(0.225 0.030 256 / 0.10);
+  --line-strong: oklch(0.225 0.030 256 / 0.16);
+  --line-bright: oklch(0.225 0.030 256 / 0.28);
 
-  /* ---- Brand: electric blue (244°) — the live wire ---- */
-  --brand:        oklch(0.700 0.160 244);
-  --brand-bright: oklch(0.815 0.150 235);
-  --brand-hover:  oklch(0.755 0.160 244);
-  --brand-deep:   oklch(0.520 0.150 252);
-  --brand-on:     oklch(0.160 0.030 252);   /* dark ink on the blue fill */
-  --brand-tint:   oklch(0.700 0.160 244 / 0.12);
-  --brand-tint-2: oklch(0.700 0.160 244 / 0.20);
-  --brand-line:   oklch(0.700 0.160 244 / 0.45);
-  --brand-glow:   oklch(0.700 0.185 244 / 0.55);
+  /* ---- Brand: electric blue (250°). Deep enough for AA text. ---- */
+  --brand:        oklch(0.555 0.175 254);   /* fills — white text passes AA */
+  --brand-ink:    oklch(0.505 0.170 256);   /* links / inline accents on white */
+  --brand-bright: oklch(0.700 0.160 244);   /* glows & highlights only */
+  --brand-hover:  oklch(0.500 0.175 254);
+  --brand-deep:   oklch(0.420 0.160 258);
+  --brand-on:     oklch(0.995 0.005 248);   /* white text on the blue fill */
+  --brand-tint:   oklch(0.555 0.175 254 / 0.08);
+  --brand-tint-2: oklch(0.555 0.175 254 / 0.15);
+  --brand-line:   oklch(0.555 0.175 254 / 0.34);
+  --brand-glow:   oklch(0.620 0.180 250 / 0.40);
 
-  /* ---- Chrome: liquid metal for the wordmark & rules ---- */
-  --chrome-1: oklch(0.985 0.004 250);   /* specular highlight */
-  --chrome-2: oklch(0.830 0.008 250);
-  --chrome-3: oklch(0.640 0.010 250);
-  --chrome-4: oklch(0.430 0.012 252);   /* shadow trough */
-  --chrome-grad: linear-gradient(
-    176deg,
-    var(--chrome-1) 0%, var(--chrome-2) 30%, var(--chrome-4) 52%,
-    var(--chrome-2) 70%, var(--chrome-1) 100%
-  );
+  /* ---- Brushed steel: the metallic accent, dark enough to read on white ---- */
+  --chrome-1: oklch(0.640 0.012 250);   /* light band */
+  --chrome-2: oklch(0.470 0.014 252);
+  --chrome-3: oklch(0.360 0.016 254);
+  --chrome-4: oklch(0.290 0.018 256);   /* dark trough */
 
-  /* ---- Accents (used sparingly, on purpose) ---- */
+  /* ---- Accents ---- */
   --accent:      var(--brand-bright);
-  --accent-deep: var(--brand);
+  --accent-deep: var(--brand-ink);
 
   /* ---- Functional ---- */
-  --success: oklch(0.760 0.150 162);
-  --danger:  oklch(0.680 0.195 25);
+  --success: oklch(0.560 0.140 162);
+  --danger:  oklch(0.560 0.205 27);
 
   /* ---- Type ---- */
   --font-display: var(--font-archivo), "Archivo", ui-sans-serif, system-ui, sans-serif;
@@ -62,7 +58,7 @@
   --step--2: 0.64rem; --step--1: 0.8rem; --step-0: 1rem;
   --step-1: 1.25rem;  --step-2: 1.563rem; --step-3: 1.953rem;
   --step-4: 2.441rem; --step-5: 3.052rem;
-  --display: clamp(2.7rem, 1.4rem + 5.6vw, 5.75rem);
+  --display: clamp(2.7rem, 1.4rem + 5.6vw, 5.5rem);
 
   /* ---- Spacing ---- */
   --s-1: 0.25rem; --s-2: 0.5rem; --s-3: 0.75rem; --s-4: 1rem;
@@ -72,26 +68,24 @@
   /* ---- Radii ---- */
   --r-1: 0.375rem; --r-2: 0.625rem; --r-3: 1rem; --r-4: 1.5rem; --r-pill: 999px;
 
-  /* ---- Elevation (dark: deep black + an optional blue halo) ---- */
-  --shadow-1: 0 1px 2px oklch(0 0 0 / 0.55), 0 14px 30px -18px oklch(0 0 0 / 0.8);
-  --shadow-2: 0 2px 6px oklch(0 0 0 / 0.5), 0 44px 76px -36px oklch(0 0 0 / 0.9);
-  --glow:     0 0 0 1px var(--brand-line), 0 22px 60px -22px var(--brand-glow);
+  /* ---- Elevation (soft, cool-tinted light shadows) ---- */
+  --shadow-1: 0 1px 2px oklch(0.30 0.04 256 / 0.06), 0 12px 28px -16px oklch(0.30 0.06 256 / 0.18);
+  --shadow-2: 0 2px 6px oklch(0.30 0.04 256 / 0.07), 0 44px 76px -36px oklch(0.30 0.07 256 / 0.26);
+  --glow:     0 0 0 1px var(--brand-line), 0 26px 60px -26px var(--brand-glow);
 
   /* ---- Motion ---- */
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);   /* quint-ish ease-out */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in:  cubic-bezier(0.7, 0, 0.84, 0);
   --dur-1: 150ms; --dur-2: 240ms; --dur-3: 360ms; --dur-4: 640ms;
 
   /* ---- z-index scale ---- */
-  /* sheet sits just below the nav bar so the burger/X stays clickable
-     and the bar's solid background caps the sheet cleanly */
   --z-base: 0; --z-content: 2; --z-sheet: 45; --z-nav: 50;
-  --z-overlay: 80; --z-toast: 90;
+  --z-overlay: 80; --z-progress: 88; --z-toast: 90;
 
   --maxw: 80rem;
   --gutter: clamp(1.25rem, 5vw, 4rem);
 
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 /* ---------------- reset ---------------- */
@@ -113,8 +107,7 @@ body {
   position: relative;
 }
 
-/* Ambient bay light — a fixed blue wash up top, a chrome-cool floor below.
-   Painted once, no animation; the page scrolls over it. */
+/* Daylight bay — a faint cool wash, brand-tinted, never cream */
 body::before {
   content: "";
   position: fixed;
@@ -122,9 +115,8 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(120% 60% at 78% -8%, oklch(0.70 0.16 244 / 0.18), transparent 60%),
-    radial-gradient(90% 50% at 8% 4%, oklch(0.52 0.15 252 / 0.14), transparent 55%),
-    radial-gradient(140% 90% at 50% 120%, oklch(0.30 0.03 256 / 0.6), transparent 70%);
+    radial-gradient(120% 55% at 82% -10%, oklch(0.62 0.18 250 / 0.10), transparent 60%),
+    radial-gradient(90% 50% at 6% 2%, oklch(0.70 0.14 230 / 0.07), transparent 55%);
 }
 
 img, picture, svg, canvas { display: block; max-width: 100%; }
@@ -139,13 +131,13 @@ h1, h2, h3 {
   letter-spacing: -0.02em;
   text-wrap: balance;
   font-optical-sizing: auto;
-  font-variation-settings: "wght" 700, "wdth" 105;
+  font-variation-settings: "wght" 700, "wdth" 104;
   color: var(--ink);
 }
 p { text-wrap: pretty; }
 
 :focus-visible {
-  outline: 2px solid var(--brand-bright);
+  outline: 2px solid var(--brand);
   outline-offset: 3px;
   border-radius: 3px;
 }
@@ -167,20 +159,6 @@ p { text-wrap: pretty; }
   margin-inline: auto; padding-inline: var(--gutter);
 }
 
-/* terminal-style label — the technical voice. Used sparingly. */
-.eyebrow {
-  font-family: var(--font-mono);
-  font-size: var(--step--1);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--brand-bright);
-  display: inline-flex; align-items: center; gap: 0.7em;
-}
-.eyebrow::before {
-  content: ""; width: 1.6em; height: 1px;
-  background: linear-gradient(90deg, var(--brand-bright), transparent);
-}
-
 .lede {
   color: var(--muted);
   font-size: var(--step-1);
@@ -188,19 +166,15 @@ p { text-wrap: pretty; }
   max-width: 60ch;
 }
 
-/* Liquid-chrome text — the deliberate metallic brand accent. The gradient is
-   tuned to stay legible on dark (no dark trough mid-letter), and falls back to
-   a solid bright chrome where background-clip:text isn't supported (older
-   mobile webviews) so the words never vanish. */
-.chrome {
-  color: var(--chrome-1);
-}
+/* Brushed-steel text — the deliberate metallic accent. Tuned to read on white,
+   with a solid fallback where background-clip:text isn't supported. */
+.chrome { color: var(--chrome-3); }
 @supports ((-webkit-background-clip: text) or (background-clip: text)) {
   .chrome {
     background: linear-gradient(
       176deg,
-      var(--chrome-1) 0%, var(--chrome-2) 34%, oklch(0.70 0.02 250) 50%,
-      var(--chrome-2) 66%, var(--chrome-1) 100%
+      var(--chrome-1) 0%, var(--chrome-2) 32%, var(--chrome-4) 50%,
+      var(--chrome-2) 68%, var(--chrome-1) 100%
     );
     background-size: 100% 100%;
     -webkit-background-clip: text;
@@ -228,34 +202,33 @@ p { text-wrap: pretty; }
 }
 .btn:active { transform: translateY(1px) scale(0.99); }
 
-/* a single light sweeps across primary buttons on hover */
 .btn-primary {
-  background: linear-gradient(180deg, var(--brand-bright), var(--brand) 60%);
+  background: linear-gradient(180deg, var(--brand) 0%, var(--brand-hover) 100%);
   color: var(--brand-on);
-  box-shadow: 0 1px 0 oklch(1 0 0 / 0.25) inset, 0 10px 28px -12px var(--brand-glow);
+  box-shadow: 0 1px 0 oklch(1 0 0 / 0.3) inset, 0 12px 26px -12px var(--brand-glow);
 }
 .btn-primary::after {
   content: "";
   position: absolute; inset: 0;
-  background: linear-gradient(105deg, transparent 30%, oklch(1 0 0 / 0.55) 48%, transparent 62%);
+  background: linear-gradient(105deg, transparent 30%, oklch(1 0 0 / 0.5) 48%, transparent 62%);
   transform: translateX(-130%);
   transition: transform var(--dur-4) var(--ease-out);
 }
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 1px 0 oklch(1 0 0 / 0.3) inset, 0 18px 40px -14px var(--brand-glow);
+  box-shadow: 0 1px 0 oklch(1 0 0 / 0.35) inset, 0 20px 38px -14px var(--brand-glow);
 }
 .btn-primary:hover::after { transform: translateX(130%); }
 
 .btn-ghost {
-  background: oklch(0.97 0.01 250 / 0.02);
+  background: var(--surface);
   color: var(--ink);
   border-color: var(--line-strong);
 }
 .btn-ghost:hover {
   background: var(--brand-tint);
   border-color: var(--brand-line);
-  color: var(--brand-bright);
+  color: var(--brand-ink);
   transform: translateY(-2px);
 }
 
@@ -266,15 +239,33 @@ p { text-wrap: pretty; }
 
 .divider { height: 1px; background: var(--line); border: 0; }
 
-/* ---------------- reveal (visible by default) ---------------- */
+/* ---------------- scroll reveals (visible by default) ---------------- */
 @media (prefers-reduced-motion: no-preference) {
-  html.js [data-reveal] {
+  /* fade: only the empty-valued variant, so the wipe isn't double-gated */
+  html.js [data-reveal=""] {
     opacity: 0; transform: translateY(22px);
     transition: opacity var(--dur-4) var(--ease-out), transform var(--dur-4) var(--ease-out);
     transition-delay: var(--reveal-delay, 0ms);
     will-change: opacity, transform;
   }
-  html.js [data-reveal].is-in { opacity: 1; transform: none; }
+  html.js [data-reveal=""].is-in { opacity: 1; transform: none; }
+
+  /* squeegee wipe — a blade (cover) pulls water off the glass to reveal it.
+     We move a COVER, not the element, so the IntersectionObserver still sees
+     the element's full box and fires (a self-clip to 0 width never would). */
+  html.js [data-reveal="wipe"] { position: relative; }
+  html.js [data-reveal="wipe"]::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    z-index: 4;
+    background: var(--reveal-cover, var(--bg));
+    transform: translateX(0);
+    transition: transform var(--dur-4) var(--ease-out);
+    transition-delay: var(--reveal-delay, 0ms);
+    pointer-events: none;
+  }
+  html.js [data-reveal="wipe"].is-in::after { transform: translateX(101%); }
 }
 
 .section { padding-block: clamp(var(--s-8), 11vh, var(--s-10)); position: relative; }
@@ -284,24 +275,24 @@ p { text-wrap: pretty; }
   0%   { background-position: 0% 0%; }
   100% { background-position: -200% 0%; }
 }
-@keyframes brand-pulse {
-  0%, 100% { opacity: 0.55; }
-  50%      { opacity: 1; }
-}
 @keyframes marquee {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
-@keyframes rake {
-  0%   { transform: translate3d(-30%, 0, 0) rotate(8deg); opacity: 0; }
-  18%  { opacity: 0.9; }
-  82%  { opacity: 0.9; }
-  100% { transform: translate3d(130%, 0, 0) rotate(8deg); opacity: 0; }
+@keyframes foam-rise {
+  0%   { transform: translateY(10px) scale(0.6); opacity: 0; }
+  25%  { opacity: 0.85; }
+  100% { transform: translateY(-110px) scale(1); opacity: 0; }
 }
-@keyframes float-up {
-  from { transform: translateY(0); opacity: 0; }
-  20%  { opacity: 0.7; }
-  to   { transform: translateY(-120px); opacity: 0; }
+@keyframes shine-pan {
+  0%   { transform: translateX(-120%) skewX(-12deg); }
+  55%, 100% { transform: translateX(220%) skewX(-12deg); }
+}
+@keyframes bead-roll {
+  0%   { transform: translateY(-6px); opacity: 0; }
+  20%  { opacity: 1; }
+  80%  { opacity: 1; }
+  100% { transform: translateY(72px); opacity: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -311,4 +302,5 @@ p { text-wrap: pretty; }
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
+  html.js [data-reveal] { opacity: 1 !important; transform: none !important; clip-path: none !important; }
 }

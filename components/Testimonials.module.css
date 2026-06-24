@@ -22,7 +22,7 @@
   gap: 0.2rem;
 }
 .stars {
-  color: var(--accent);
+  color: var(--brand);
   font-size: var(--step-1);
   letter-spacing: 0.08em;
 }

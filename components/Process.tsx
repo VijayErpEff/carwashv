@@ -20,7 +20,7 @@ export default function Process() {
               wash queue.
             </p>
           </Reveal>
-          <Reveal i={2} className={styles.media}>
+          <Reveal i={2} mode="wipe" className={styles.media}>
             <div className={styles.frame}>
               <Image
                 src={images.atWork.src}

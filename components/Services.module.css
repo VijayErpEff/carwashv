@@ -41,12 +41,12 @@
   border-color: var(--brand-line);
 }
 
-/* featured card breaks rhythm: electric-blue, lifted, dark ink */
+/* featured card breaks rhythm: electric-blue, lifted, white ink */
 .featured {
-  background: linear-gradient(165deg, var(--brand-bright), var(--brand) 55%, var(--brand-deep));
-  border-color: var(--brand-bright);
+  background: linear-gradient(165deg, var(--brand) 0%, var(--brand-deep) 100%);
+  border-color: var(--brand);
   transform: translateY(-1.5rem);
-  box-shadow: 0 30px 70px -28px var(--brand-glow);
+  box-shadow: 0 34px 70px -26px var(--brand-glow);
   color: var(--brand-on);
 }
 .featured:hover {
@@ -60,8 +60,8 @@
   font-size: var(--step--2);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--ink);
-  background: oklch(0.16 0.03 252 / 0.55);
+  color: var(--brand-on);
+  background: oklch(1 0 0 / 0.18);
   padding: 0.34em 0.8em;
   border-radius: var(--r-pill);
   font-weight: 600;
@@ -82,7 +82,7 @@
   margin-bottom: var(--s-5);
   max-width: 36ch;
 }
-.featured .blurb { color: oklch(0.16 0.03 252 / 0.82); }
+.featured .blurb { color: oklch(0.995 0.005 248 / 0.85); }
 
 .feats {
   list-style: none;
@@ -111,7 +111,7 @@
   padding-top: var(--s-5);
   border-top: 1px solid var(--line);
 }
-.featured .cardFoot { border-top-color: oklch(0.16 0.03 252 / 0.25); }
+.featured .cardFoot { border-top-color: oklch(0.995 0.005 248 / 0.25); }
 
 .price {
   display: flex;
@@ -126,7 +126,7 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
-.featured .from { color: oklch(0.16 0.03 252 / 0.7); }
+.featured .from { color: oklch(0.995 0.005 248 / 0.72); }
 .amount {
   font-family: var(--font-display);
   font-size: var(--step-3);
@@ -140,18 +140,18 @@
   font-size: var(--step--2);
   color: var(--muted);
 }
-.featured .dur { color: oklch(0.16 0.03 252 / 0.78); }
+.featured .dur { color: oklch(0.995 0.005 248 / 0.82); }
 
-/* the featured card's button reads as a dark chip on the electric-blue fill */
+/* the featured card's button reads as a white chip on the electric-blue fill */
 .featured .cardFoot :global(.btn-primary) {
-  background: var(--bg);
-  color: var(--brand-bright);
-  box-shadow: 0 1px 0 var(--line-bright) inset;
+  background: var(--surface);
+  color: var(--brand-ink);
+  box-shadow: 0 6px 18px -10px oklch(0.20 0.05 256 / 0.5);
 }
 .featured .cardFoot :global(.btn-primary)::after { display: none; }
 .featured .cardFoot :global(.btn-primary):hover {
-  background: var(--surface);
-  color: var(--brand-bright);
+  background: oklch(1 0 0 / 0.92);
+  color: var(--brand-hover);
 }
 .cardFoot :global(.btn) { width: 100%; }
 

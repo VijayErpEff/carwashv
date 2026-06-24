@@ -8,8 +8,8 @@ export default function manifest(): MetadataRoute.Manifest {
       "Mobile car detailing across West London & the Heathrow terminals. Clean. Shine. Protect. Perfection.",
     start_url: "/",
     display: "standalone",
-    background_color: "#0d111a",
-    theme_color: "#0d111a",
+    background_color: "#0a0d14",
+    theme_color: "#f4f7fb",
     orientation: "portrait",
     categories: ["lifestyle", "business"],
     icons: [

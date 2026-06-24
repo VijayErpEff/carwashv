@@ -29,7 +29,7 @@ function Spark() {
     <svg className={styles.spark} width="16" height="16" viewBox="0 0 24 24" fill="none">
       <path
         d="M12 2v6M12 16v6M2 12h6M16 12h6"
-        stroke="var(--brand-bright)"
+        stroke="var(--brand)"
         strokeWidth="2"
         strokeLinecap="round"
       />

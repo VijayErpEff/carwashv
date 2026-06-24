@@ -1,4 +1,5 @@
 import RevealInit from "@/components/RevealInit";
+import ScrollProgress from "@/components/ScrollProgress";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
@@ -14,6 +15,7 @@ export default function Page() {
   return (
     <>
       <RevealInit />
+      <ScrollProgress />
       <Nav />
       <main id="main">
         <Hero />

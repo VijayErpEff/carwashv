@@ -14,7 +14,7 @@ export default function Showcase() {
   return (
     <section className={`section ${styles.wrap}`} aria-labelledby="inside-h">
       <div className={`shell ${styles.inner}`}>
-        <Reveal className={styles.media}>
+        <Reveal mode="wipe" className={styles.media}>
           <div className={styles.frame}>
             <Image
               src={images.interior.src}
@@ -23,6 +23,7 @@ export default function Showcase() {
               sizes="(max-width: 900px) 100vw, 48vw"
               className={styles.photo}
             />
+            <span className={styles.shine} aria-hidden="true" />
           </div>
         </Reveal>
 

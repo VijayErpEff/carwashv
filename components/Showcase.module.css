@@ -13,6 +13,7 @@
 
 .media {
   position: relative;
+  --reveal-cover: var(--bg-2);
   /* bleed to the left edge */
   margin-left: calc(var(--gutter) * -1);
 }
@@ -23,8 +24,20 @@
   overflow: hidden;
   background: var(--surface-2);
   box-shadow: var(--shadow-2);
+  border: 1px solid var(--line-strong);
 }
 .photo { object-fit: cover; }
+.shine {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 40%, oklch(1 0 0 / 0.32) 50%, transparent 60%);
+  transform: translateX(-120%) skewX(-12deg);
+}
+/* the shine sweeps once the squeegee wipe has cleared the glass */
+@media (prefers-reduced-motion: no-preference) {
+  .media:global(.is-in) .shine { animation: shine-pan 1.6s var(--ease-out) 0.5s 1; }
+}
 
 .body {
   max-width: 34rem;

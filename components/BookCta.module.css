@@ -161,7 +161,7 @@
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  border: 2px solid oklch(0.16 0.03 252 / 0.35);
+  border: 2px solid oklch(1 0 0 / 0.35);
   border-top-color: var(--brand-on);
   animation: spin 0.7s linear infinite;
 }

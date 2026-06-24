@@ -6,6 +6,8 @@ type Props = {
   i?: number;
   as?: ElementType;
   className?: string;
+  /** "fade" (default) lifts + fades; "wipe" clears like a squeegee on glass */
+  mode?: "fade" | "wipe";
 };
 
 /**
@@ -14,12 +16,12 @@ type Props = {
  * `js` class to <html> and toggles `.is-in` via IntersectionObserver, at which
  * point globals.css hides-then-animates it. Motion is a pure enhancement.
  */
-export default function Reveal({ children, i = 0, as, className }: Props) {
+export default function Reveal({ children, i = 0, as, className, mode = "fade" }: Props) {
   const Tag = (as ?? "div") as ElementType;
   return (
     <Tag
       className={className}
-      data-reveal=""
+      data-reveal={mode === "wipe" ? "wipe" : ""}
       style={{ ["--reveal-delay" as string]: `${i * 70}ms` }}
     >
       {children}

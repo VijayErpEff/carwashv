@@ -1,0 +1,47 @@
+.badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: calc(var(--h) * 0.16) calc(var(--h) * 0.27);
+  border-radius: calc(var(--h) * 0.34);
+  background:
+    linear-gradient(158deg, oklch(0.28 0.03 256) 0%, oklch(0.15 0.02 258) 100%);
+  border: 1px solid oklch(0.72 0.03 250 / 0.22);
+  box-shadow:
+    0 1px 0 oklch(1 0 0 / 0.14) inset,
+    0 1px 2px oklch(0.20 0.03 256 / 0.18),
+    0 14px 30px -18px oklch(0.20 0.03 256 / 0.5);
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform var(--dur-2) var(--ease-out), box-shadow var(--dur-2) var(--ease-out);
+}
+.badge:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 1px 0 oklch(1 0 0 / 0.18) inset,
+    0 1px 2px oklch(0.20 0.03 256 / 0.2),
+    0 18px 34px -16px oklch(0.20 0.03 256 / 0.55);
+}
+
+.img {
+  position: relative;
+  z-index: 1;
+  height: var(--h);
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 1px 3px oklch(0 0 0 / 0.45));
+  user-select: none;
+}
+
+.sheen {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 42%, oklch(1 0 0 / 0.22) 50%, transparent 58%);
+  transform: translateX(-130%) skewX(-12deg);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .sheen { animation: shine-pan 1.3s var(--ease-out) 0.7s 1; }
+  .badge:hover .sheen { animation: shine-pan 0.9s var(--ease-out); }
+}

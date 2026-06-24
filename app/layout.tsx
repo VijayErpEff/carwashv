@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     title: "Terminal",
-    statusBarStyle: "black-translucent",
+    statusBarStyle: "default",
     startupImage: [
       { url: "/startup?w=1290&h=2796", media: "(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3)" },
       { url: "/startup?w=1179&h=2556", media: "(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3)" },
@@ -66,8 +66,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0d111a",
-  colorScheme: "dark",
+  themeColor: "#f4f7fb",
+  colorScheme: "light",
   width: "device-width",
   initialScale: 1,
 };

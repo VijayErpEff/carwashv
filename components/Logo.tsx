@@ -1,22 +1,22 @@
+import styles from "./Logo.module.css";
+
 type Props = { className?: string; height?: number };
 
 /**
- * The Terminal Car Wash RM logo — the real brand crest, served as a transparent
- * PNG (black knocked out), so it composites cleanly on any dark surface.
+ * Terminal Car Wash RM logo. The crest is authored for dark, so on the light
+ * theme it sits on a dark brushed-metal plate (on-brand: a metal tag), with a
+ * specular sheen that sweeps on load and on hover — so it actually shines.
  */
-const RATIO = 866 / 598; // intrinsic aspect of the cropped crest
-
-export default function Logo({ className, height = 46 }: Props) {
+export default function Logo({ className, height = 44 }: Props) {
   return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      className={className}
-      src="/logo.png"
-      alt="Terminal Car Wash RM"
-      width={Math.round(height * RATIO)}
-      height={height}
-      style={{ height, width: "auto", userSelect: "none" }}
-      draggable={false}
-    />
+    <span
+      className={`${styles.badge} ${className ?? ""}`}
+      style={{ ["--h" as string]: `${height}px` }}
+      aria-label="Terminal Car Wash RM"
+    >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img className={styles.img} src="/logo.png" alt="Terminal Car Wash RM" draggable={false} />
+      <span className={styles.sheen} aria-hidden="true" />
+    </span>
   );
 }
